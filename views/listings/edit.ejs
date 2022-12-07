@@ -1,0 +1,46 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">Edit Listing</h1>
+        <div class="col-6 offset-3">
+            <form action="/listings/<%=listing._id%>?_method=put" method="post" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" placeholder="Title" id="title" name="listing[title]"
+                        value="<%=listing.title%>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" placeholder="Location" id="location"
+                        name="listing[location]" value="<%=listing.location%>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image URL</label>
+                    <input class="form-control" type="text" id="image" name="listing[image]"
+                        value="<%=listing.image%>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price per night</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                            aria-describedby="price-label" name="listing[price]" value="<%=listing.price%>"
+                            required>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="desc">Description</label>
+                    <textarea class="form-control" type="text" id="desc" name="listing[description]"
+                        required><%=listing.description%></textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-info">Update Listing</button>
+                </div>
+            </form>
+            <p><a href="/listings/host">Back to Dashboard</a></p>
+        </div>
+    </div>

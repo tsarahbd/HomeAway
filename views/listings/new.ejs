@@ -1,0 +1,66 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">New Listing</h1>
+        <div class="col-6 offset-3">
+            <form action="/listing" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" placeholder="Title" id="title" name="listing[title]"
+                        required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" placeholder="Location" id="location"
+                        name="listing[location]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="image">Image URL</label>
+                    <input class="form-control" type="text" id="image" name="campground[image]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div> -->
+                <div class="mb-3">
+                    <label for="price" class="form-label">Listing price per night</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                            aria-describedby="price-label" name="listing[price]" required>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="desc">Description</label>
+                    <textarea class="form-control" type="text" id="desc" name="listing[description]"
+                        required></textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <div class="">
+                        <input type="file" id="image" name="image" multiple>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="houseRules">House Rules</label>
+                    <textarea class="form-control" type="text" id="houseRules" name="listing[houseRules]" required></textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="amenities">Amenities</label>
+                    <textarea class="form-control" type="text" id="amenities" name="listing[amenities]" required></textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Listing</button>
+                </div>
+            </form>
+            <p><a href="/listings">Back</a></p>
+        </div>
+    </div>
+    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script>
+        bkLib.onDomLoaded(function () {
+            new nicEditor({buttonList:['ul','bold','italic','underline'], externalCSS : 'https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css'}).panelInstance('houseRules');
+            new nicEditor({ buttonList: ['ul', 'bold', 'italic', 'underline'], externalCSS: 'https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' }).panelInstance('amenities');
+        });
+    </script>

@@ -1,0 +1,101 @@
+<% layout('layouts/boilerplate')%>
+    <div class="container d-flex justify-content-center align-items-center mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-xl-6 offset-xl-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                            alt="" class="card-img-top mb-3">
+                        <h5 class="card-title text-center">Register</h5>
+                        <form action="/register" method="POST" class="validated-form" novalidate>
+                            <label class="form-label">User Type</label>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="userType" id="guest" value="guest">
+                                    <label class="form-check-label" for="guest">
+                                        Guest
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="userType" id="host" value="host">
+                                    <label class="form-check-label" for="host">
+                                        Host
+                                    </label>
+                                </div>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="username">Username</label>
+                                <input class="form-control" type="text" id="username" name="username" required
+                                    autofocus>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" type="email" id="email" name="email" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" type="password" id="password" name="password" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="que">Secret Question?</label>
+                                <input class="form-control" type="text" id="que" name="que" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="ans">Your Answer</label>
+                                <input class="form-control" type="text" id="ans" name="ans" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="name">Your Name</label>
+                                <input class="form-control" type="text" id="name" name="name" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="address">Your Address</label>
+                                <input class="form-control" type="text" id="address" name="address" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="city">City</label>
+                                <input class="form-control" type="text" id="city" name="city" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="plz">Postal Code</label>
+                                <input class="form-control" type="nunber" id="plz" name="plz" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            
+
+                            <button class="btn btn-success btn-block">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
